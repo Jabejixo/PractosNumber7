@@ -31,9 +31,11 @@ namespace PractosNumber7
                     if (directory.Exists)
                     {
                         FileSystemInfo[] dirs = directory.GetFileSystemInfos();
-                        foreach (FileSystemInfo dir in dirs)
+                        for (int i = 0; i < dirs.Length; i++)
                         {
-                            Console.WriteLine($"  {dir.FullName}\t      Дата создания: {dir.CreationTime}");
+                            Console.WriteLine($"  {dirs[i].FullName}");
+                            Console.SetCursorPosition(50, i + 1);
+                            Console.WriteLine($"Дата создания: {dirs[i].CreationTime}");
                         }
                         int count = dirs.Length;
                         max = count;
@@ -94,9 +96,11 @@ namespace PractosNumber7
                     if (directory.Exists)
                     {
                         FileSystemInfo[] dirs = directory.GetFileSystemInfos();
-                        foreach (FileSystemInfo dir in dirs)
+                        for (int i = 0; i < dirs.Length; i++)
                         {
-                            Console.WriteLine($"  {dir.FullName}\t      Дата создания: {dir.CreationTime}");
+                            Console.WriteLine($"  {dirs[i].FullName}");
+                            Console.SetCursorPosition(50, i + 1);
+                            Console.WriteLine($"Дата создания: {dirs[i].CreationTime}");
                         }
                         int count = dirs.Length;
                         max = count;
@@ -163,9 +167,11 @@ namespace PractosNumber7
             if (directory.Exists)
             {
                 FileSystemInfo[] dirs = directory.GetFileSystemInfos();
-                foreach (FileSystemInfo dir in dirs)
+                for (int i = 0; i < dirs.Length; i++)
                 {
-                    Console.WriteLine($"  {dir.FullName}\t      Дата создания: {dir.CreationTime}");
+                    Console.WriteLine($"  {dirs[i].FullName}");
+                    Console.SetCursorPosition(50, i + 1);
+                    Console.WriteLine($"Дата создания: {dirs[i].CreationTime}");
                 }
                 int count = dirs.Length;
                 max = count + 2;
