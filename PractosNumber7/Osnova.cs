@@ -8,7 +8,9 @@ namespace PractosNumber7
         static string openFile;
         public static void OsnovA(ConsoleKey key, int position, int max, int min, string path)
         {
-            DriveInfo[] allDrives = DriveInfo.GetDrives();
+            List<DriveInfo> allDrives = DriveInfo.GetDrives().ToList();
+            DriveInfo d = allDrives.First(x => x.Name == "D:\\");
+            allDrives.Remove(d);
             Console.WriteLine("  Выберите диск: ");
             foreach (DriveInfo drive in allDrives)
             {
@@ -22,10 +24,11 @@ namespace PractosNumber7
                 Arrows.WriteCursor(position);
                 key = Console.ReadKey().Key;
                 position = Arrows.CursorPosition(position, max, min, key);
-                if (key == ConsoleKey.Enter & position == 1)
+                if (key == ConsoleKey.Enter)
                 {
+                    path = Convert.ToString(allDrives[position - 1]);
+                    string dirName = ($"{path}\\");
                     Console.Clear();
-                    string dirName = "C:\\";
                     var directory = new DirectoryInfo(dirName);
                     Console.WriteLine("  Содержимое:   F1 - создать файл, F2 - удалить файл, F3 - создать директорию, F4 - удалить директорию");
                     if (directory.Exists)
@@ -33,9 +36,13 @@ namespace PractosNumber7
                         FileSystemInfo[] dirs = directory.GetFileSystemInfos();
                         for (int i = 0; i < dirs.Length; i++)
                         {
-                            Console.WriteLine($"  {dirs[i].FullName}");
-                            Console.SetCursorPosition(50, i + 1);
-                            Console.WriteLine($"Дата создания: {dirs[i].CreationTime}");
+                            Console.WriteLine($"  {dirs[i].Name}");
+                            Console.SetCursorPosition(47, i + 1);
+                            Console.WriteLine($"{dirs[i].CreationTime}");
+                            Console.SetCursorPosition(47, i + 1);
+                            Console.WriteLine("   ");
+                            Console.SetCursorPosition(75, i + 1);
+                            Console.WriteLine($"{dirs[i].Extension}");
                         }
                         int count = dirs.Length;
                         max = count;
@@ -87,75 +94,14 @@ namespace PractosNumber7
                         OpenFile(openFile, key, position, max, min, path);
                     }
                 }
-                else if (key == ConsoleKey.Enter & position == 2)
-                {
-                    Console.Clear();
-                    string dirName = "E:\\";
-                    var directory = new DirectoryInfo(dirName);
-                    Console.WriteLine("  Содержимое:   F1 - создать файл, F2 - удалить файл, F3 - создать директорию, F4 - удалить директорию");
-                    if (directory.Exists)
-                    {
-                        FileSystemInfo[] dirs = directory.GetFileSystemInfos();
-                        for (int i = 0; i < dirs.Length; i++)
-                        {
-                            Console.WriteLine($"  {dirs[i].FullName}");
-                            Console.SetCursorPosition(50, i + 1);
-                            Console.WriteLine($"Дата создания: {dirs[i].CreationTime}");
-                        }
-                        int count = dirs.Length;
-                        max = count;
-                        bool check = true;
-                        Console.WriteLine();
-                        do
-                        {
-                            Arrows.WriteCursor(position);
-                            key = Console.ReadKey().Key;
-                            position = Arrows.CursorPosition(position, max, min, key);
-                            if (key == ConsoleKey.Enter)
-                            {
-                                path = Convert.ToString(dirs[position - 1]);
-                                openFile = path;
-                                openFile.TrimEnd('\\');
-                                path = ($"{path}\\");
-                                position = 1;
-                                DIrectory(key, max, min, position, path);
-                            }
-                            else if (key == ConsoleKey.F1)
-                            {
-                                NewFile(path, position, key, max, min);
-                            }
-                            else if (key == ConsoleKey.F2)
-                            {
-                                DeleteFile(openFile, dirs, position, key, max, min);
-                            }
-                            else if (key == ConsoleKey.F3)
-                            {
-                                NewDirectory(path, position, key, max, min);
-                            }
-                            else if (key == ConsoleKey.F4)
-                            {
-                                DeleteDirectory(path, dirs, position, key, max, min);
-                            }
-                            else if (key == ConsoleKey.Escape)
-                            {
-                                Console.Clear();
-                                OsnovA(key, position, max, min, path);
-                                check = false;
-                            }
-                        } while (check);
-                    }
-                    else
-                    {
-                        OpenFile(openFile, key, position, max, min, path);
-                    }
-                }
+
                 else if (key == ConsoleKey.Escape)
                 {
                     Console.Clear();
                     Console.WriteLine("  ППОКА СУЧКА");
                     Environment.Exit(0);
                 }
-            }while(true);
+            } while (true);
         }
         private static void DIrectory(ConsoleKey key, int position, int max, int min, string path)
         {
@@ -169,12 +115,16 @@ namespace PractosNumber7
                 FileSystemInfo[] dirs = directory.GetFileSystemInfos();
                 for (int i = 0; i < dirs.Length; i++)
                 {
-                    Console.WriteLine($"  {dirs[i].FullName}");
-                    Console.SetCursorPosition(50, i + 1);
-                    Console.WriteLine($"Дата создания: {dirs[i].CreationTime}");
+                    Console.WriteLine($"  {dirs[i].Name}");
+                    Console.SetCursorPosition(47, i + 1);
+                    Console.WriteLine($"{dirs[i].CreationTime}");
+                    Console.SetCursorPosition(47, i + 1);
+                    Console.WriteLine("   ");
+                    Console.SetCursorPosition(75, i + 1);
+                    Console.WriteLine($"{dirs[i].Extension}");
                 }
                 int count = dirs.Length;
-                max = count + 2;
+                max = count;
                 min = count - count + 1;
                 bool check = true;
                 Console.WriteLine();
@@ -191,6 +141,7 @@ namespace PractosNumber7
                         path = ($"{path}\\");
                         position = 1;
                         DIrectory(key, max, min, position, path);
+
                     }
                     else if (key == ConsoleKey.F1)
                     {

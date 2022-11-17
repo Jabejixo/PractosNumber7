@@ -12,7 +12,7 @@
         static void Menu(int position, int max, int min, ConsoleKey key, string path)
         {
             min = 1; max = 2;
-            position = 1;
+            position= 1;
             Osnova.OsnovA(key, position,max,min, path);
         }
     }

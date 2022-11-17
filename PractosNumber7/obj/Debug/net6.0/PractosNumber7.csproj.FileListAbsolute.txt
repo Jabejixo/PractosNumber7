@@ -13,3 +13,18 @@ C:\Users\JolyGenious\source\repos\PractosNumber7\PractosNumber7\obj\Debug\net6.0
 C:\Users\JolyGenious\source\repos\PractosNumber7\PractosNumber7\obj\Debug\net6.0\PractosNumber7.pdb
 C:\Users\JolyGenious\source\repos\PractosNumber7\PractosNumber7\obj\Debug\net6.0\PractosNumber7.genruntimeconfig.cache
 C:\Users\JolyGenious\source\repos\PractosNumber7\PractosNumber7\obj\Debug\net6.0\ref\PractosNumber7.dll
+C:\Users\JolyGenious\source\repos\PractosNumber7 — копия\PractosNumber7\bin\Debug\net6.0\PractosNumber7.exe
+C:\Users\JolyGenious\source\repos\PractosNumber7 — копия\PractosNumber7\bin\Debug\net6.0\PractosNumber7.deps.json
+C:\Users\JolyGenious\source\repos\PractosNumber7 — копия\PractosNumber7\bin\Debug\net6.0\PractosNumber7.runtimeconfig.json
+C:\Users\JolyGenious\source\repos\PractosNumber7 — копия\PractosNumber7\bin\Debug\net6.0\PractosNumber7.dll
+C:\Users\JolyGenious\source\repos\PractosNumber7 — копия\PractosNumber7\bin\Debug\net6.0\PractosNumber7.pdb
+C:\Users\JolyGenious\source\repos\PractosNumber7 — копия\PractosNumber7\obj\Debug\net6.0\PractosNumber7.csproj.AssemblyReference.cache
+C:\Users\JolyGenious\source\repos\PractosNumber7 — копия\PractosNumber7\obj\Debug\net6.0\PractosNumber7.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JolyGenious\source\repos\PractosNumber7 — копия\PractosNumber7\obj\Debug\net6.0\PractosNumber7.AssemblyInfoInputs.cache
+C:\Users\JolyGenious\source\repos\PractosNumber7 — копия\PractosNumber7\obj\Debug\net6.0\PractosNumber7.AssemblyInfo.cs
+C:\Users\JolyGenious\source\repos\PractosNumber7 — копия\PractosNumber7\obj\Debug\net6.0\PractosNumber7.csproj.CoreCompileInputs.cache
+C:\Users\JolyGenious\source\repos\PractosNumber7 — копия\PractosNumber7\obj\Debug\net6.0\PractosNumber7.dll
+C:\Users\JolyGenious\source\repos\PractosNumber7 — копия\PractosNumber7\obj\Debug\net6.0\refint\PractosNumber7.dll
+C:\Users\JolyGenious\source\repos\PractosNumber7 — копия\PractosNumber7\obj\Debug\net6.0\PractosNumber7.pdb
+C:\Users\JolyGenious\source\repos\PractosNumber7 — копия\PractosNumber7\obj\Debug\net6.0\PractosNumber7.genruntimeconfig.cache
+C:\Users\JolyGenious\source\repos\PractosNumber7 — копия\PractosNumber7\obj\Debug\net6.0\ref\PractosNumber7.dll
